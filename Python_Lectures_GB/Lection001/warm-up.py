@@ -43,11 +43,29 @@ else:
     print(f'это число большее {number_two}')
 
 # 2. Четырёхзначное?
+
+
 print('Пользователь вводит целое число. Выведите YES, если это число является чётырёхзначным, и NO в противном случае.')
 
+# Способ 1:
 any_number = int(input('введите любое число: '))
 
 if 1000 <= any_number < 10000:
     print('YES')
 else:
     print('NO')
+
+# Способ 2:
+
+any_string_number = input('введите любое число: ')
+
+if '-' in any_string_number:
+    if len(any_string_number) == 5:
+        print('YES')
+    else:
+        print('NO')
+else:
+    if any_string_number == 4:
+        print('YES')
+    else:
+        print("NO")
