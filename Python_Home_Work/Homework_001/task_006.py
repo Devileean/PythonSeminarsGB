@@ -12,8 +12,8 @@ ticket_number = str(input('Введтите шестизначный номер 
 if len(ticket_number) <= 5 or len(ticket_number) >= 7:
     print('Вы ввели не верный номер!')
 else:
-    sum1=int(ticket_number[0])+int(ticket_number[1])+int(ticket_number[2])
-    sum2=int(ticket_number[3])+int(ticket_number[4])+int(ticket_number[5])
+    sum1 = int(ticket_number[0])+int(ticket_number[1])+int(ticket_number[2])
+    sum2 = int(ticket_number[3])+int(ticket_number[4])+int(ticket_number[5])
 
 if sum1 == sum2:
     print(f'{ticket_number} -> yes')
