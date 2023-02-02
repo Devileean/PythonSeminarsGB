@@ -23,23 +23,33 @@ print('123456 -> no')
 
 # Второй способ
 
-try:
-    ticket_number = int(input('Введите шестизначный номер билета: '))
-except:
-    print('Ввели текст')
-if 99999 < ticket_number < 1000000:
-    first_three_num, end_three_num = 0, 0
-    ticket = ticket_number
-    for i in range(6):
-        if i > 2:
-            first_three_num += ticket_number % 10
-        else:
-            end_three_num += ticket_number % 10
-        ticket_number = int(ticket_number / 10)
-    if first_three_num == end_three_num:
-        print(f'{ticket} -> yes')
-    else:
-        print(f'{ticket} -> no')
-else:
-    print('Вы ввели не верный номер!')
+# try:
+#     ticket_number = int(input('Введите шестизначный номер билета: '))
+# except:
+#     print('Ввели текст')
+# if 99999 < ticket_number < 1000000:
+#     first_three_num, end_three_num = 0, 0
+#     ticket = ticket_number
+#     for i in range(6):
+#         if i > 2:
+#             first_three_num += ticket_number % 10
+#         else:
+#             end_three_num += ticket_number % 10
+#         ticket_number = int(ticket_number / 10)
+#     if first_three_num == end_three_num:
+#         print(f'{ticket} -> yes')
+#     else:
+#         print(f'{ticket} -> no')
+# else:
+#     print('Вы ввели не верный номер!')
 
+# Третий способ
+
+lucky_ticket = int(input('Введите шестизначный номер билета: '))
+a = lucky_ticket // 10 ** 5
+b = lucky_ticket % 10 ** 5 // 10 ** 4
+c = lucky_ticket % 10 ** 4 // 10 ** 3
+d = lucky_ticket % 10 ** 3 // 10 ** 2
+e = lucky_ticket % 10 ** 2 // 10
+f = lucky_ticket % 10
+print(a + b + c == d + e + f)
