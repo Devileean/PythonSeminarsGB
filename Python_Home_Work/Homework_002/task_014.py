@@ -3,14 +3,22 @@ print('Задача 14:\n'
 
 print('10 -> 1 2 4 8')
 
-any_number = int(input("Введите число: "))
-m = 1
+# # var1 без списка
+# any_num = int(input('Введите целое положительное число: '))
+# two_pow, power = 1, 1
+# while two_pow <= any_num:
+#     print(two_pow, end=' ')
+#     two_pow = 2 ** power
+#     power += 1
 
-print(f'{any_number} -> ')
-
-while m < any_number:
-
-    print(m, end=' ')
-    m = m * 2
-
+# var2 со списком
+any_num = int(input('Введите целое положительное число: '))
+print_any_num = any_num
+two_pow_list = []
+two_pow, power = 1, 1
+while two_pow <= any_num:
+    two_pow_list.append(two_pow)
+    two_pow = 2 ** power
+    power += 1
+print(any_num, " -> ", *two_pow_list)
 
