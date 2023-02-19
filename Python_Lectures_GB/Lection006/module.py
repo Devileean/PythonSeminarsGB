@@ -47,4 +47,4 @@ def friendly_nums(num: int):
             if k == sum_j:
                 if j == sum_of_div(k):
                     print(j, k)
-                    skip =
+                    skip = k
