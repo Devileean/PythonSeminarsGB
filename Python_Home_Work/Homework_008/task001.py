@@ -11,19 +11,25 @@ print("""Задача 1.
 Тучи разошлись
 Листва зеленела""")
 
-def read_last(lines, file):
-    with open(file, 'r', encoding='utf-8') as file:
+def read_last(value_1: int, value_2: str):
+
+    with open(value_2, 'r', encoding='utf-8') as file:
         text = file.read().splitlines()
-        for e in range(len(text) - lines, len(text)):
+        max = len(text)
+        if value_1 > max:
+            min = 0
+            print('Не верно указано количество последних строк\n'
+                  f'Будет выведен максимум в {max} строк\n'
+                  )
+        else:
+            min = len(text) - value_1
+        for e in range(min, max):
             print(text[e])
+        print('\n')
 
-flag = True
-while flag == True:
-    lines = int(input('Введите число: '))
-    if lines >= 0:
-         flag = False
-    else:
-        print('Некоректный ввод! Повторите.')
-
-file = input('Введите имя файла: ')   # article.txt
-read_last(lines, file)
+file = input('Введите имя файла(article.txt): ')
+lines = int(input('Сколько последних строк вывести: '))
+if lines > 0 and file == 'article.txt':
+    read_last(lines, file)
+else:
+    print('Неверно указаны последние строки')
